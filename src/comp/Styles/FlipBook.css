@@ -1,0 +1,54 @@
+.flipbook {
+  margin: 2rem auto;
+  padding: 0.5rem;
+  background: #fdfaf6; /* Soft cream background for warmth */
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  max-width: 95vw;
+  max-height: 85vh;
+  aspect-ratio: 3 / 4;
+  transition: all 0.3s ease-in-out;
+}
+
+.flipbook .page {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-shadow:
+    inset 0 0 12px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.flipbook .page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  border-radius: inherit;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Optional Hover Zoom for desktop */
+@media (hover: hover) {
+  .flipbook .page img:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Optional: subtle gradient behind book */
+body {
+  background: linear-gradient(135deg, #f0f0f0, #ffffff);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}

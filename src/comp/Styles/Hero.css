@@ -1,0 +1,168 @@
+.hero {
+  width: 100vw;
+  overflow: hidden;
+  
+}
+.herowrapper{
+    background-color: #374d34;
+}
+
+.hero-image {
+  width: 100vw;
+  height: auto;
+  display: block;
+  
+}
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100vw;
+  height: auto;
+  display: block;
+  animation: popIn 0.7s ease forwards;
+  opacity: 0.2;
+}
+
+/* Base style for lines */
+.animated-line {
+  position: absolute;
+  height: 7px; /* even thicker */
+  background: #FAF3E0; /* olive green */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 3px;
+}
+.roadLovewrapper{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.roadLove{
+    
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+/* Lines with different vertical positions, directions, delays & durations */
+.line1 {
+  top: 20%;
+  left: 0;
+  width: 0;
+  animation: slideLineLTR 4.5s ease forwards;
+  animation-delay: 0s;
+}
+
+.line2 {
+  top: 30%;
+  right: 0;
+  width: 0;
+  animation: slideLineRTL 5.2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.line3 {
+  top: 40%;
+  left: 0;
+  width: 0;
+  animation: slideLineLTR 4.8s ease forwards;
+  animation-delay: 1s;
+}
+
+.line4 {
+  top: 50%;
+  right: 0;
+  width: 0;
+  animation: slideLineRTL 5.5s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.line5 {
+  top: 60%;
+  left: 0;
+  width: 0;
+  animation: slideLineLTR 5.1s ease forwards;
+  animation-delay: 2s;
+}
+
+.line6 {
+  top: 70%;
+  right: 0;
+  width: 0;
+  animation: slideLineRTL 5.7s ease forwards;
+  animation-delay: 2.5s;
+}
+
+.line7 {
+  top: 80%;
+  left: 0;
+  width: 0;
+  animation: slideLineLTR 5.3s ease forwards;
+  animation-delay: 3s;
+}
+
+.line8 {
+  top: 90%;
+  right: 0;
+  width: 0;
+  animation: slideLineRTL 6s ease forwards;
+  animation-delay: 3.5s;
+}
+
+/* Left to Right animation */
+@keyframes slideLineLTR {
+  0% {
+    left: 0;
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    width: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    left: 100%;
+    opacity: 1;
+    width: 0;
+  }
+}
+
+/* Right to Left animation */
+@keyframes slideLineRTL {
+  0% {
+    right: 0;
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    width: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    right: 100%;
+    opacity: 1;
+    width: 0;
+  }
+}

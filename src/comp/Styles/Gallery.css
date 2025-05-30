@@ -1,0 +1,142 @@
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px 2px rgba(160, 197, 95, 0.6);
+    border-color: #A0C55F;
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(160, 197, 95, 1);
+    border-color: #4C6A47;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-section {
+  max-width: 1200px;
+  margin: 2rem auto 5rem;
+  padding: 0 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #4C6A47;
+  background: #FAF3E0;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(76, 106, 71, 0.25);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.gallery-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #5C4033;
+  letter-spacing: 0.08em;
+  text-shadow: 1px 1px 3px rgba(76, 106, 71, 0.3);
+  user-select: none;
+}
+
+.gallery-grid {
+  column-count: 2;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+@media (min-width: 1024px) {
+  .gallery-grid {
+    column-count: 4;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  box-shadow:
+    0 6px 15px rgba(76, 106, 71, 0.15),
+    inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    border-color 0.7s ease;
+  will-change: transform, box-shadow, border-color;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 22px;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.gallery-item:hover {
+  animation: pulseGlow 2s infinite;
+  transform: translateY(-8px) scale(1.05) rotateZ(1deg);
+  box-shadow:
+    0 20px 35px rgba(160, 197, 95, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  border-color: #A0C55F;
+  z-index: 5;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.15) translateY(-6px);
+}
+
+/* Dark blur overlay with text */
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
+  border-radius: 22px;
+  transition: background 0.5s ease, backdrop-filter 0.5s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gallery-item:hover::before {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+/* Caption text overlay - now showing the date */
+.gallery-item::after {
+  content: attr(data-date);  /* <-- THIS IS THE FIX */
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FAF3E0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.07em;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.3s;
+  z-index: 3;
+  user-select: none;
+  pointer-events: none;
+  text-shadow: 0 0 8px rgba(160, 197, 95, 0.9);
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}

@@ -1,0 +1,60 @@
+.navbar {
+  background-color: #FAF3E0; /* soft cream */
+  color: #1F1F1F;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* centers everything horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navBarContent{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 10vh;
+  /* background-color: pink; */
+  align-items: center;
+  justify-content: center;
+}
+.movingHearts{
+  margin-top: 5vh;
+  width: 15vw;
+  opacity: 0.4;
+  
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4C6A47;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  justify-content: center; /* center the nav links horizontally */
+  width: 100%;
+  max-width: 400px; /* controls width for neatness */
+}
+
+.nav-links li {
+  /* no extra styles needed */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5C4033;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #4C6A47;
+}

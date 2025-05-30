@@ -1,0 +1,14 @@
+.footer {
+  background-color: #FAF3E0; /* cream */
+  color: #4C6A47; /* olive green */
+  text-align: center;
+  padding: 1rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  box-shadow: inset 0 1px 0 rgba(76, 106, 71, 0.2);
+  user-select: none;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
